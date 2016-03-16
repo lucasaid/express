@@ -1,9 +1,24 @@
 html(lang="en")
     head
         title= "User Index"
+        style.
+            * {
+              font-family: Helvetica, Arial, sans-serif;
+            }
+
+            div {
+              display: flex;
+              align-items: center;
+              padding: 1em;
+              font-size: 1.2em;
+            }
+
+            div a {
+              padding-left: 0.5em;
+            }
     body
         h1 Jade!
-        ul
-            each user in users
-                li
-                    a(href="/" + user.username)= user.name.full
+        each user in users
+            div
+                img(src="/profile-pics/" + user.username + "_sm.jpg")
+                a(href="/" + user.username)= user.name.full + "Hello"
